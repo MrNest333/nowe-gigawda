@@ -11,24 +11,24 @@ export function IDCard() {
           background: "linear-gradient(135deg, #d4e4f7 0%, #b8d4f0 30%, #e8eff8 60%, #c5d9ef 100%)",
         }}
       >
+        {/* Tło z giloszem */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px)",
         }} />
 
         <div className="relative flex gap-4">
-          {/* Zdjęcie profilowe i godło */}
+          {/* Kolumna lewa: Zdjęcie i Flaga */}
           <div className="flex flex-col items-center gap-3">
-            {/* TU JEST TWOJE ZDJĘCIE */}
             <div className="relative h-32 w-28 overflow-hidden rounded-md border-2 border-[#cc2222] bg-white shadow-md">
               <Image 
-                src="/profile.png" 
+                src="/fotkaa.png" 
                 alt="Zdjęcie profilowe"
                 fill
                 className="object-cover"
               />
             </div>
             
-            <div className="h-6 w-12 overflow-hidden rounded-sm shadow-sm">
+            <div className="h-6 w-12 overflow-hidden rounded-sm shadow-sm border border-gray-200">
               <div className="h-3 bg-[#ffffff]" />
               <div className="h-3 bg-[#dc143c]" />
             </div>
@@ -44,14 +44,14 @@ export function IDCard() {
             </div>
           </div>
 
-          {/* Dane osobowe - możesz je tu zmienić */}
+          {/* Kolumna prawa: Dane (wpisz tu swoje) */}
           <div className="flex flex-1 flex-col justify-center gap-2">
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">Michał</p>
+              <p className="text-base font-bold text-[#1a1a2e]">MICHAŁ</p>
               <p className="text-[10px] text-[#4a5568]">Imię (imiona)</p>
             </div>
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">Kruczek</p>
+              <p className="text-base font-bold text-[#1a1a2e]">KRUCZEK</p>
               <p className="text-[10px] text-[#4a5568]">Nazwisko</p>
             </div>
             <div>
