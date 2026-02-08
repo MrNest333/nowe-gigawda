@@ -1,5 +1,5 @@
 {
-  "name": "Moje mObywatel",
+  "name": "mObywatel",
   "short_name": "mObywatel",
   "description": "Moja aplikacja mObywatel",
   "start_url": "/",
@@ -19,5 +19,6 @@
     }
   ]
 }
+
 
 
