@@ -47,11 +47,11 @@ export function IDCard() {
           {/* Dane osobowe - możesz je tu zmienić */}
           <div className="flex flex-1 flex-col justify-center gap-2">
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">TWOJE IMIĘ</p>
+              <p className="text-base font-bold text-[#1a1a2e]">Michał</p>
               <p className="text-[10px] text-[#4a5568]">Imię (imiona)</p>
             </div>
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">TWOJE NAZWISKO</p>
+              <p className="text-base font-bold text-[#1a1a2e]">Kruczek</p>
               <p className="text-[10px] text-[#4a5568]">Nazwisko</p>
             </div>
             <div>
