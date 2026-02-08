@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { StatusBar } from "@/components/status-bar"
 import { AppHeader } from "@/components/app-header"
 import { IDCard } from "@/components/id-card"
 import { ValidBadge } from "@/components/valid-badge"
@@ -48,7 +47,6 @@ export default function Page() {
 
   return (
     <div className="relative mx-auto min-h-screen max-w-lg bg-background">
-      <StatusBar />
 
       <AppHeader
         onBack={() => {}}
