@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react" // Dodaliśmy useEffect
 import { StatusBar } from "@/components/status-bar"
 import { AppHeader } from "@/components/app-header"
 import { IDCard } from "@/components/id-card"
@@ -16,6 +16,20 @@ export default function Page() {
   const [helpOpen, setHelpOpen] = useState(false)
   const [actionModalId, setActionModalId] = useState<string | null>(null)
   const [copiedToast, setCopiedToast] = useState(false)
+  
+  // --- TUTAJ JEST NOWY KOD ZEGARA ---
+  const [now, setNow] = useState(new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(new Date())
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const formattedTime = now.toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' })
+  const formattedDate = now.toLocaleDateString('pl-PL')
+  // ----------------------------------
 
   const handleCopy = () => {
     setCopiedToast(true)
@@ -39,8 +53,10 @@ export default function Page() {
 
       {/* Scrollable content */}
       <main className="overflow-y-auto pb-24">
-        {/* Timestamp */}
-        <p className="py-2 text-center text-xs text-muted-foreground">21:18 08.08.2025</p>
+        {/* Timestamp - TERAZ AUTOMATYCZNY */}
+        <p className="py-2 text-center text-xs text-muted-foreground">
+          {formattedTime} {formattedDate}
+        </p>
 
         {/* ID Card */}
         <IDCard />
