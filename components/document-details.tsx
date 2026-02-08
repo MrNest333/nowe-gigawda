@@ -54,10 +54,10 @@ export function DocumentDetails({ onCopy }: DocumentDetailsProps) {
           </div>
         </div>
 
-        <DetailRow label="Termin ważności" value="8.08.2035" />
-        <DetailRow label="Data wydania" value="8.08.2025" />
-        <DetailRow label="Imię ojca" value="discord.gg/fobywatel" />
-        <DetailRow label="Imię matki" value="discord.gg/fobywatel" />
+        <DetailRow label="Termin ważności" value="10.07.2034" />
+        <DetailRow label="Data wydania" value="10.07.2024" />
+        <DetailRow label="Imię ojca" value="Stanisław" />
+        <DetailRow label="Imię matki" value="Katarzyna" />
       </div>
 
       {/* Additional data accordion */}
@@ -75,10 +75,10 @@ export function DocumentDetails({ onCopy }: DocumentDetailsProps) {
 
       {additionalExpanded && (
         <div className="rounded-xl bg-card overflow-hidden animate-in slide-in-from-top-2 duration-200">
-          <DetailRow label="Numer PESEL" value="00000000000" />
+          <DetailRow label="Numer PESEL" value="07253169476" />
           <DetailRow label="Płeć" value="M" />
           <DetailRow label="Obywatelstwo" value="POLSKIE" />
-          <DetailRow label="Miejsce urodzenia" value="Warszawa" />
+          <DetailRow label="Miejsce urodzenia" value="Wadowice" />
         </div>
       )}
 
@@ -86,7 +86,7 @@ export function DocumentDetails({ onCopy }: DocumentDetailsProps) {
       <div className="flex items-center justify-between rounded-xl bg-card px-5 py-4">
         <div>
           <p className="text-xs text-muted-foreground mb-1">Ostatnia aktualizacja</p>
-          <p className="text-base font-semibold text-foreground">24.12.2024</p>
+          <p className="text-base font-semibold text-foreground">05.02.2026</p>
         </div>
         <button className="rounded-full border border-primary px-4 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
           Aktualizuj
