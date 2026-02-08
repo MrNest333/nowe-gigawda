@@ -1,0 +1,7 @@
+{
+  "name": "Moja Super Apka",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
