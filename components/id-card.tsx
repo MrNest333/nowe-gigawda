@@ -21,7 +21,7 @@ export function IDCard() {
           <div className="flex flex-col items-center gap-3">
             <div className="relative h-32 w-28 overflow-hidden rounded-md border-2 border-[#cc2222] bg-white shadow-md">
               <Image 
-                src="/fotkaa.png" 
+                src="/fotkaa.webp" 
                 alt="Zdjęcie profilowe"
                 fill
                 className="object-cover"
