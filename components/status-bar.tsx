@@ -1,6 +1,6 @@
 "use client"
 
-import { Signal, Wifi, Battery } from "lucide-react"
+
 
 export function StatusBar() {
   return (
