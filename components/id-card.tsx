@@ -71,7 +71,7 @@ export function IDCard() {
               <p className="text-xs text-[#4a5568]">{"Imię (imiona)"}</p>
             </div>
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">discord.gg/fobywatel</p>
+              <p className="text-base font-bold text-[#1a1a2e]">Kruczek</p>
               <p className="text-xs text-[#4a5568]">Nazwisko</p>
             </div>
             <div>
@@ -79,11 +79,11 @@ export function IDCard() {
               <p className="text-xs text-[#4a5568]">{"Obywatelstwo"}</p>
             </div>
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">9.07.2025</p>
+              <p className="text-base font-bold text-[#1a1a2e]">31.05.2007</p>
               <p className="text-xs text-[#4a5568]">Data urodzenia</p>
             </div>
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">00000000000</p>
+              <p className="text-base font-bold text-[#1a1a2e]">07253169476</p>
               <p className="text-xs text-[#4a5568]">Numer PESEL</p>
             </div>
           </div>
