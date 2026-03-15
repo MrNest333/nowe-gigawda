@@ -4,67 +4,69 @@ import Image from "next/image"
 
 export function IDCard() {
   return (
-    <div className="mx-4 overflow-hidden rounded-xl shadow-lg">
-      <div
-        className="relative p-5"
+    <div className="mx-4 py-2">
+      {/* Kontener Karty z realistycznym gradientem */}
+      <div 
+        className="relative overflow-hidden rounded-[24px] p-5 shadow-[0_15px_35px_rgba(0,40,120,0.12)] border border-white/50"
         style={{
-          background: "linear-gradient(135deg, #d4e4f7 0%, #b8d4f0 30%, #e8eff8 60%, #c5d9ef 100%)",
+          background: "linear-gradient(145deg, #ffffff 0%, #f0f5ff 40%, #e6efff 100%)",
         }}
       >
-        {/* Tło z giloszem */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px)",
-        }} />
+        {/* Subtelny znak wodny (Orzełek) w tle */}
+        <div className="absolute -right-4 -bottom-6 select-none opacity-[0.03] text-[160px] pointer-events-none rotate-[-15deg]">
+          🦅
+        </div>
 
-        <div className="relative flex gap-4">
-          {/* Kolumna lewa: Zdjęcie i Flaga */}
-          <div className="flex flex-col items-center gap-3">
-            <div className="relative h-32 w-28 overflow-hidden rounded-md border-2 border-[#cc2222] bg-white shadow-md">
+        {/* Flaga i Rzeczpospolita Polska - Górna sekcja */}
+        <div className="flex items-center mb-5 relative z-10">
+          <div className="mr-3 h-[18px] w-[30px] overflow-hidden rounded-[2px] border-[0.5px] border-gray-200 shadow-sm">
+            <div className="h-1/2 bg-white" />
+            <div className="h-1/2 bg-[#dc143c]" />
+          </div>
+          <span className="text-[12px] font-[800] uppercase tracking-tighter text-[#1a1b1e]">
+            Rzeczpospolita Polska
+          </span>
+        </div>
+
+        <div className="relative z-10 flex gap-5">
+          {/* Lewa kolumna: Zdjęcie */}
+          <div className="flex flex-col items-center">
+            <div className="relative h-[160px] w-[122px] overflow-hidden rounded-xl border-l-[4px] border-[#dc3545] bg-gray-100 shadow-md">
               <Image 
                 src="/fotkaa.webp" 
-                alt="Zdjęcie profilowe"
+                alt="Foto" 
                 fill
-                className="object-cover"
+                className="object-cover contrast-[1.05] brightness-[1.02]"
+                priority
               />
-            </div>
-            
-            <div className="h-6 w-12 overflow-hidden rounded-sm shadow-sm border border-gray-200">
-              <div className="h-3 bg-[#ffffff]" />
-              <div className="h-3 bg-[#dc143c]" />
-            </div>
-
-            <div className="flex items-center gap-1.5">
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#1a3a6b]">
-                <span className="text-[6px] font-bold text-[#f0f0f0]">RP</span>
-              </div>
-              <div className="text-left">
-                <p className="text-[8px] font-medium leading-tight text-[#1a3a6b]">Rzeczpospolita</p>
-                <p className="text-[8px] font-medium leading-tight text-[#1a3a6b]">Polska</p>
-              </div>
             </div>
           </div>
 
-          {/* Kolumna prawa: Dane (wpisz tu swoje) */}
-          <div className="flex flex-1 flex-col justify-center gap-2">
-            <div>
-              <p className="text-base font-bold text-[#1a1a2e]">MICHAŁ</p>
-              <p className="text-[10px] text-[#4a5568]">Imię (imiona)</p>
+          {/* Prawa kolumna: Dane (Układ 1:1) */}
+          <div className="flex flex-1 flex-col justify-start pt-1">
+            <div className="mb-3">
+              <p className="text-[16px] font-[900] leading-none text-[#1a1b1e] uppercase">MICHAŁ</p>
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Imię (imiona)</p>
             </div>
-            <div>
-              <p className="text-base font-bold text-[#1a1a2e]">KRUCZEK</p>
-              <p className="text-[10px] text-[#4a5568]">Nazwisko</p>
+            
+            <div className="mb-3">
+              <p className="text-[16px] font-[900] leading-none text-[#1a1b1e] uppercase">KRUCZEK</p>
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Nazwisko</p>
             </div>
-            <div>
-              <p className="text-base font-bold text-[#1a1a2e]">POLSKIE</p>
-              <p className="text-[10px] text-[#4a5568]">Obywatelstwo</p>
+
+            <div className="mb-3">
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">POLSKIE</p>
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Obywatelstwo</p>
             </div>
-            <div>
-              <p className="text-base font-bold text-[#1a1a2e]">31.05.2007</p>
-              <p className="text-[10px] text-[#4a5568]">Data urodzenia</p>
+
+            <div className="mb-3">
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">31.05.2007</p>
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Data urodzenia</p>
             </div>
+
             <div>
-              <p className="text-base font-bold text-[#1a1a2e]">07253169476</p>
-              <p className="text-[10px] text-[#4a5568]">Numer PESEL</p>
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">07253169476</p>
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Numer PESEL</p>
             </div>
           </div>
         </div>
