@@ -1,23 +1,16 @@
 {
-  "short_name": "mObywatel",
-  "name": "mObywatel - Dokumenty Mobilne",
-  "description": "Cyfrowy dokument tożsamości",
-  "icons": [
-    {
-      "src": "/icon.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icon.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "/",
+  "background_color": "#ffffff",
+  "description": "Aplikacja mDowód - cyfrowy dokument tożsamości",
+  "dir": "ltr",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "orientation": "portrait"
+  "name": "mObywatel",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "mObywatel",
+  "start_url": "/",
+  "theme_color": "#0a0a0f",
+  "id": "/",
+  "display_override": [
+    "window-controls-overlay"
+  ]
 }
