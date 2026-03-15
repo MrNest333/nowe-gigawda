@@ -5,7 +5,7 @@ import Image from "next/image"
 export function IDCard() {
   return (
     <div className="mx-4 py-2">
-      {/* Kontener Karty z realistycznym gradientem */}
+      {/* Kontener Karty */}
       <div 
         className="relative overflow-hidden rounded-[24px] p-5 shadow-[0_15px_35px_rgba(0,40,120,0.12)] border border-white/50"
         style={{
@@ -17,15 +17,24 @@ export function IDCard() {
           🦅
         </div>
 
-        {/* Flaga i Rzeczpospolita Polska - Górna sekcja */}
-        <div className="flex items-center mb-5 relative z-10">
-          <div className="mr-3 h-[18px] w-[30px] overflow-hidden rounded-[2px] border-[0.5px] border-gray-200 shadow-sm">
+        {/* Sekcja Flagi i Logo RP - GIGA LEGIT UPDATE */}
+        <div className="flex items-center gap-2 mb-4 relative z-10">
+          {/* Flaga */}
+          <div className="h-[18px] w-[30px] overflow-hidden rounded-[2px] border-[0.5px] border-gray-300 shadow-sm flex-shrink-0">
             <div className="h-1/2 bg-white" />
             <div className="h-1/2 bg-[#dc143c]" />
           </div>
-          <span className="text-[12px] font-[800] uppercase tracking-tighter text-[#1a1b1e]">
-            Rzeczpospolita Polska
-          </span>
+          
+          {/* Okrągłe logo RP i Napis */}
+          <div className="flex items-center gap-1.5">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a3a6b] shadow-sm">
+               <span className="text-[7px] font-black text-white tracking-tighter">RP</span>
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="text-[9px] font-[900] leading-[1] text-[#1a3a6b] uppercase tracking-tighter">Rzeczpospolita</p>
+              <p className="text-[9px] font-[900] leading-[1] text-[#1a3a6b] uppercase tracking-tighter">Polska</p>
+            </div>
+          </div>
         </div>
 
         <div className="relative z-10 flex gap-5">
@@ -42,7 +51,7 @@ export function IDCard() {
             </div>
           </div>
 
-          {/* Prawa kolumna: Dane (Układ 1:1) */}
+          {/* Prawa kolumna: Dane */}
           <div className="flex flex-1 flex-col justify-start pt-1">
             <div className="mb-3">
               <p className="text-[16px] font-[900] leading-none text-[#1a1b1e] uppercase">MICHAŁ</p>
