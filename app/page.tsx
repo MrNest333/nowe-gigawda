@@ -1,85 +1,151 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { AppHeader } from "@/components/app-header"
-import { IDCard } from "@/components/id-card"
-import { ValidBadge } from "@/components/valid-badge"
-import { ActionButtons } from "@/components/action-buttons"
-import { DocumentDetails } from "@/components/document-details"
-import { BottomNav } from "@/components/bottom-nav"
-import { HelpModal } from "@/components/help-modal"
-import { ActionModal } from "@/components/action-modal"
 
-export default function Page() {
-  const [activeTab, setActiveTab] = useState("dokumenty")
-  const [helpOpen, setHelpOpen] = useState(false)
-  const [actionModalId, setActionModalId] = useState<string | null>(null)
-  const [copiedToast, setCopiedToast] = useState(false)
-  
-  // Zegar z zabezpieczeniem
-  const [now, setNow] = useState(new Date())
-  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-    const timer = setInterval(() => {
-      setNow(new Date())
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
+import Image from "next/image"
 
-  const handleCopy = () => {
-    setCopiedToast(true)
-    setTimeout(() => setCopiedToast(false), 2000)
-  }
 
-  const handleAction = (id: string) => {
-    setActionModalId(id)
-  }
 
-  // Jeśli strona jeszcze się "nie załadowała" w przeglądarce, pokazujemy pusty czas, żeby nie było błędu
-  const timeString = mounted 
-    ? now.toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) 
-    : "--:--:--"
-  const dateString = mounted 
-    ? now.toLocaleDateString('pl-PL') 
-    : "--.--.----"
+export function IDCard() {
 
   return (
-    <div className="relative mx-auto min-h-screen max-w-lg bg-background">
 
-      <AppHeader
-        onBack={() => {}}
-        onHelp={() => setHelpOpen(true)}
-      />
+    <div className="mx-4 py-2">
 
-      <main className="overflow-y-auto pb-24">
-        {/* Timestamp */}
-        <p className="py-2 text-center text-xs text-muted-foreground font-medium">
-          {timeString} {dateString}
-        </p>
+      {/* Kontener Karty z realistycznym gradientem */}
 
-        <IDCard />
-        <ValidBadge />
-        <ActionButtons onAction={handleAction} />
-        <DocumentDetails onCopy={handleCopy} />
-      </main>
+      <div 
 
-      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
-      <HelpModal isOpen={helpOpen} onClose={() => setHelpOpen(false)} />
-      <ActionModal
-        isOpen={actionModalId !== null}
-        onClose={() => setActionModalId(null)}
-        actionId={actionModalId}
-      />
+        className="relative overflow-hidden rounded-[24px] p-5 shadow-[0_15px_35px_rgba(0,40,120,0.12)] border border-white/50"
 
-      {copiedToast && (
-        <div className="fixed left-1/2 top-20 z-[200] -translate-x-1/2 animate-in fade-in slide-in-from-top-2 duration-300">
-          <div className="rounded-xl bg-[#22c55e] px-5 py-2.5 text-sm font-medium text-[#ffffff] shadow-lg">
-            Skopiowano do schowka
-          </div>
+        style={{
+
+          background: "linear-gradient(145deg, #ffffff 0%, #f0f5ff 40%, #e6efff 100%)",
+
+        }}
+
+      >
+
+        {/* Subtelny znak wodny (Orzełek) w tle */}
+
+        <div className="absolute -right-4 -bottom-6 select-none opacity-[0.03] text-[160px] pointer-events-none rotate-[-15deg]">
+
+          🦅
+
         </div>
-      )}
+
+
+
+        {/* Flaga i Rzeczpospolita Polska - Górna sekcja */}
+
+        <div className="flex items-center mb-5 relative z-10">
+
+          <div className="mr-3 h-[18px] w-[30px] overflow-hidden rounded-[2px] border-[0.5px] border-gray-200 shadow-sm">
+
+            <div className="h-1/2 bg-white" />
+
+            <div className="h-1/2 bg-[#dc143c]" />
+
+          </div>
+
+          <span className="text-[12px] font-[800] uppercase tracking-tighter text-[#1a1b1e]">
+
+            Rzeczpospolita Polska
+
+          </span>
+
+        </div>
+
+
+
+        <div className="relative z-10 flex gap-5">
+
+          {/* Lewa kolumna: Zdjęcie */}
+
+          <div className="flex flex-col items-center">
+
+            <div className="relative h-[160px] w-[122px] overflow-hidden rounded-xl border-l-[4px] border-[#dc3545] bg-gray-100 shadow-md">
+
+              <Image 
+
+                src="/fotkaa.webp" 
+
+                alt="Foto" 
+
+                fill
+
+                className="object-cover contrast-[1.05] brightness-[1.02]"
+
+                priority
+
+              />
+
+            </div>
+
+          </div>
+
+
+
+          {/* Prawa kolumna: Dane (Układ 1:1) */}
+
+          <div className="flex flex-1 flex-col justify-start pt-1">
+
+            <div className="mb-3">
+
+              <p className="text-[16px] font-[900] leading-none text-[#1a1b1e] uppercase">MICHAŁ</p>
+
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Imię (imiona)</p>
+
+            </div>
+
+            
+
+            <div className="mb-3">
+
+              <p className="text-[16px] font-[900] leading-none text-[#1a1b1e] uppercase">KRUCZEK</p>
+
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Nazwisko</p>
+
+            </div>
+
+
+
+            <div className="mb-3">
+
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">POLSKIE</p>
+
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Obywatelstwo</p>
+
+            </div>
+
+
+
+            <div className="mb-3">
+
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">31.05.2007</p>
+
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Data urodzenia</p>
+
+            </div>
+
+
+
+            <div>
+
+              <p className="text-[15px] font-[900] leading-none text-[#1a1b1e] uppercase">07253169476</p>
+
+              <p className="text-[9px] font-bold text-[#8e9196] uppercase tracking-tighter">Numer PESEL</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   )
+
 }
