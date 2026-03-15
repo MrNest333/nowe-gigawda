@@ -1,13 +1,8 @@
-export const metadata: Metadata = {
-  title: 'mDowód - Cyfrowy dokument',
-  description: 'Aplikacja mDowód - cyfrowy dokument tożsamości',
-  manifest: '/manifest.json',
-  icons: {
-    icon: [
-      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
-    ],
+export const metadata = {
+  title: 'mObywatel',
+  manifest: '/manifest.json', // To musi tu być!
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
   },
 }
