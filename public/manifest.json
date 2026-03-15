@@ -3,14 +3,10 @@
   "description": "Aplikacja mDowód - cyfrowy dokument tożsamości",
   "dir": "ltr",
   "display": "standalone",
-  "name": "mObywatel",
+  "name": "nowe-gigawda.vercel",
   "orientation": "any",
   "scope": "/",
-  "short_name": "mObywatel",
-  "start_url": "/",
-  "theme_color": "#0a0a0f",
-  "id": "/",
-  "display_override": [
-    "window-controls-overlay"
-  ]
+  "short_name": "nowe-gigawda.vercel",
+  "start_url": "https://nowe-gigawda.vercel.app/",
+  "theme_color": "#0a0a0f"
 }
